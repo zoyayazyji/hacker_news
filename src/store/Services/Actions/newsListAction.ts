@@ -2,21 +2,6 @@ import axios from '../../../instance';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { INews } from '../Slices/newsListSlice';
 
-// export const getCategories = createAsyncThunk<ICategory[]>(
-//     'get/category',
-//     async () => {
-//         try {
-//             const response = await axios.get('/category');
-//             return response.data;
-//         } catch (error) {
-//             console.log(error);
-//         }
-//     },
-// );
-
-
-
-
 export const getNewsList = createAsyncThunk("get/newsList", async () => {
   try {
     let listNews: INews[] = [];
