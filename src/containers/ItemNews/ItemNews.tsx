@@ -11,20 +11,27 @@ import {
 import StarsIcon from '@mui/icons-material/Stars';
 import { INews } from './../../store/Services/Slices/newsListSlice';
 import { getOneNews } from './../../store/Services/Actions/oneNewsActions';
+import OneNewsCard from '../../components/ItemNews/OneNewsCard';
+import { getCoreComments } from './../../store/Services/Actions/coreCommentsActions';
 
 
 const ItemNews = (): JSX.Element => {
   const appDispatch = useAppDispatch();
   const params = useParams();
   const { oneNews } = useAppSelector((state) => state.oneNews);
-  console.log(oneNews);
-
+  const { coreComments } = useAppSelector((state) => state.coreComments);
+  
+ console.log(coreComments);
   useEffect(() => {
-    return void appDispatch(getOneNews(params.id));
+     void appDispatch(getOneNews(params.id));
+     void appDispatch(getCoreComments(params.id));
   }, []);
   return (
     <>
-    <Typography>buu</Typography>
+    <OneNewsCard
+      oneNews={oneNews}
+      coreComments={coreComments}
+    />
     </>
   )
 };
