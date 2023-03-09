@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Header from './Header/Header';
 
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 
 import { Grid } from '@mui/material';
 

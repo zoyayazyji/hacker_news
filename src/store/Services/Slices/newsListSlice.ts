@@ -7,19 +7,19 @@ export interface INews {
   id: number;
   kids: [];
   score: number;
-  time: number;
+  time: string | Date | any;
   title: string;
   type: string;
   url: string;
 }
 
-export interface ICategoryState {
+export interface INewsState {
     newsList: INews[] | any;
     loading: boolean;
     error: AxiosError | undefined;
 }
 
-const initialState: ICategoryState = {
+const initialState: INewsState = {
     newsList: [],
     loading: false,
     error: undefined,

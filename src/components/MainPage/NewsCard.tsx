@@ -14,24 +14,22 @@ import { INews } from './../../store/Services/Slices/newsListSlice';
 
 const NewsCard = ({newsList}: {newsList: INews[]}): JSX.Element => {
 
-  
  return ( <>
- {newsList.map((item: INews) => (
- <>
- <Grid style={{marginLeft: '270px'}}>
+ {newsList?.map((item: INews) => (
+ <Grid style={{marginLeft: '270px'}} key={item.id} >
   <Card variant="outlined" sx={{ maxWidth: 875, margin: '10px', backgroundColor: '#be7d6a'}}>
-   <CardContent key={item.id}>
-     <Typography sx={{ fontSize: 14 }} color="text.secondary">
-      Published by : <strong>{item.by}</strong> , at  {new Date(item.time * 100).toLocaleString()}
+   <CardContent>
+     <Typography component='div' sx={{ fontSize: 14 }} color="text.secondary">
+      Published by : <strong>{item.by}</strong> , at  {item.time}
      </Typography>
-     <Typography variant="body2" sx={{ fontSize: 18, fontWeight: 'bold', paddingTop: '50px' }}>
+     <Typography component='div' variant="body2" sx={{ fontSize: 18, fontWeight: 'bold', paddingTop: '50px' }}>
        {item.title}
      </Typography>
-     <Typography variant="body2" sx={{display: 'flex', paddingTop: '10px' }}>
+     <Typography component='div' variant="body2" sx={{display: 'flex', paddingTop: '10px' }}>
         <Typography >
           <StarsIcon/>
           </Typography>
-          <Typography sx={{paddingLeft: '10px', paddingTop: '1px'}}>
+          <Typography component='div' sx={{paddingLeft: '10px', paddingTop: '1px'}}>
           Raiting is: <strong>{item.score}</strong>
           </Typography>
      </Typography>
@@ -41,7 +39,7 @@ const NewsCard = ({newsList}: {newsList: INews[]}): JSX.Element => {
    </CardActions>
    </Card>
    </Grid>
-  </>
+
  ))}
   
  </>

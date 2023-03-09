@@ -1,12 +1,9 @@
-import React, { FC } from 'react';
-
-import AppBar from '@mui/material/AppBar';
-
-import { Grid } from '@mui/material';
+import React from 'react';
+import { Grid, Button } from '@mui/material';
+import AutorenewIcon from '@mui/icons-material/Autorenew';
+import { Link } from "react-router-dom";
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-
-
 
 const Header = (): JSX.Element  => { 
     return (
@@ -22,16 +19,17 @@ const Header = (): JSX.Element  => {
                     justifyContent={'center'}
                     alignItems={'center'}
                 >
-                    <Typography style={{color: '#be7d6a'}}
+                    <Typography component={Link} to={`/`} style={{color: '#be7d6a', textDecoration: 'none', marginLeft: '15px'}}
                     >
                        Hacker News
                     </Typography>
-
+                    <Typography style={{marginLeft: '1150px'}}>
+                        <Button style={{color: '#be7d6a'}} onClick={()=> window.location.reload()}>
+                        <AutorenewIcon/>
+                        </Button>
+                    </Typography>
                 </Grid>
-
-
             </Toolbar>
-
         </Grid>
     );
 };
