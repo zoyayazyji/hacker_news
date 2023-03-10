@@ -25,7 +25,7 @@ const CommentsCard = ({ coreComments }: { coreComments: IComment[] }): JSX.Eleme
 
   return (<>
     <Grid style={{ marginLeft: '170px', paddingBottom: '10px' }}>
-      {coreComments.map((item) => (
+      {coreComments?.map((item) => (
         <Grid>
           {item?.kids !== undefined ? (<>
             <Card variant="outlined" sx={{ maxWidth: 1075, margin: '10px', backgroundColor: '#adabb8' }}>
