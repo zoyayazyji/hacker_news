@@ -6,9 +6,10 @@ export const getCoreComments = createAsyncThunk("get/coreComments", async (id: n
   try {
     let itemComments: IComment[] = [];
     const comments = await axios.get(`/item/${id}.json?print=pretty`);
-    if (comments?.data.kids !== undefined) {
-      for (let i = 0; i < comments?.data.kids.length; i++) {
-        const response = await axios.get(`/item/${comments.data.kids[i]}.json?print=pretty`);
+    const comment = comments.data;
+    if (comment?.kids !== undefined) {
+      for (let i = 0; i < comment?.kids.length; i++) {
+        const response = await axios.get(`/item/${comment.kids[i]}.json?print=pretty`);
         itemComments.push({
           by: response?.data?.by,
           id: response?.data?.id,
