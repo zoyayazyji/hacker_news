@@ -10,13 +10,13 @@ export const getCoreComments = createAsyncThunk("get/coreComments", async (id: n
       for (let i = 0; i < comments.data.kids.length; i++) {
         const response = await axios.get(`/item/${comments.data.kids[i]}.json?print=pretty`);
         itemComments.push({
-          by: response.data.by,
-          id: response.data.id,
-          kids: response.data.kids,
-          parent: response.data.parent,
-          time: new Date(response.data.time).toDateString(),
-          text: response.data.text,
-          type: response.data.type,
+          by: response?.data?.by,
+          id: response?.data?.id,
+          kids: response?.data?.kids,
+          parent: response?.data?.parent,
+          time: new Date(response?.data?.time).toDateString(),
+          text: response?.data?.text,
+          type: response?.data?.type,
         });
       };
     };

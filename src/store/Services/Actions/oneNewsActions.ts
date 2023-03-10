@@ -6,14 +6,14 @@ export const getOneNews = createAsyncThunk("get/oneNews", async (id: number | an
   try {
     const itemNews = await axios.get(`/item/${id}.json?print=pretty`);
     const oneNews: INews = {
-      by: itemNews.data.by,
-      id: itemNews.data.id,
-      kids: itemNews.data.kids,
-      score: itemNews.data.score,
-      time: new Date(itemNews.data.time).toDateString(),
-      title: itemNews.data.title,
-      type: itemNews.data.type,
-      url: itemNews.data.url,
+      by: itemNews?.data?.by,
+      id: itemNews?.data?.id,
+      kids: itemNews?.data?.kids,
+      score: itemNews?.data?.score,
+      time: new Date(itemNews?.data?.time).toDateString(),
+      title: itemNews?.data?.title,
+      type: itemNews?.data?.type,
+      url: itemNews?.data?.url,
     };
     return oneNews;
   } catch (error) {
