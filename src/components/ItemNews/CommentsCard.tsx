@@ -44,7 +44,7 @@ const CommentsCard = ({ coreComments }: { coreComments: IComment[] }): JSX.Eleme
             </Card>
             {item?.id === comments[0]?.parent ? (
               <Grid>
-                {comments.map((comment: IComment) => (
+                {comments?.map((comment: IComment) => (
                   <Grid sx={{ maxWidth: 875, marginTop: '-60px', marginBottom: '70px', marginLeft: '170px', backgroundColor: '#e5dfe5' }}>
                     <Card variant="outlined" sx={{ backgroundColor: '#f7eaf7' }}>
                       <CardContent>
