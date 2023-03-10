@@ -6,8 +6,8 @@ export const getCoreComments = createAsyncThunk("get/coreComments", async (id: n
   try {
     let itemComments: IComment[] = [];
     const comments = await axios.get(`/item/${id}.json?print=pretty`);
-    if (comments?.data?.kids !== undefined) {
-      for (let i = 0; i < comments?.data?.kids?.length; i++) {
+    if (comments?.data.kids !== undefined) {
+      for (let i = 0; i < comments?.data.kids.length; i++) {
         const response = await axios.get(`/item/${comments.data.kids[i]}.json?print=pretty`);
         itemComments.push({
           by: response?.data?.by,
@@ -30,8 +30,8 @@ export const getComments = createAsyncThunk("get/comments", async (id: number | 
   try {
     let itemComments: IComment[] = [];
     const comments = await axios.get(`/item/${id}.json?print=pretty`);
-    if (comments?.data?.kids !== undefined) {
-      for (let i = 0; i < comments?.data?.kids?.length; i++) {
+    if (comments?.data.kids !== undefined) {
+      for (let i = 0; i < comments?.data.kids.length; i++) {
         const response = await axios.get(`/item/${comments.data.kids[i]}.json?print=pretty`);
         itemComments.push({
           by: response?.data?.by,
