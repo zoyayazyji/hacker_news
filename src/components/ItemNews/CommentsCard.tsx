@@ -22,7 +22,7 @@ const CommentsCard = ({ coreComments }: { coreComments: IComment[] }): JSX.Eleme
     void appDispatch(getComments(id));
     setIsAnswer(true);
   };
-
+ console.log(coreComments)
   return (<>
     <Grid style={{ marginLeft: '170px', paddingBottom: '10px' }}>
       {coreComments?.map((item) => (
