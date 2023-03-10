@@ -23,7 +23,7 @@ const Header = (): JSX.Element => {
                     >
                         Hacker News Page
                     </Typography>
-                    <Typography style={{ marginLeft: '1050px' }}>
+                    <Typography style={{ marginLeft: '900px' }}>
                         <Button style={{ color: '#700d70' }} onClick={() => window.location.reload()}>
                             <AutorenewIcon />
                         </Button>
