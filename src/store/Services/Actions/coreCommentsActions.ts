@@ -5,6 +5,7 @@ import { IComment } from '../Slices/coreCommentsSlice';
 export const getCoreComments = createAsyncThunk("get/coreComments", async (id: number | any) => {
   try {
     let itemComments: IComment[] = [];
+    const response = await axios.get('/newstories.json?print=pretty');
     const comments = await axios.get(`/item/${id}.json?print=pretty`);
     const comment = comments.data;
     console.log(comments.data)
@@ -32,6 +33,7 @@ export const getCoreComments = createAsyncThunk("get/coreComments", async (id: n
 export const getComments = createAsyncThunk("get/comments", async (id: number | any) => {
   try {
     let itemComments: IComment[] = [];
+    const response = await axios.get('/newstories.json?print=pretty');
     const comments = await axios.get(`/item/${id}.json?print=pretty`);
     if (comments?.data.kids !== undefined) {
       for (let i = 0; i < comments?.data.kids.length; i++) {
