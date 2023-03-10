@@ -23,7 +23,7 @@ function App(): JSX.Element {
                         <Routes>
                             <Route path='/' element={<Layout />}>
                                 <Route path={`${process.env.PUBLIC_URL}/`} element={<MainPage />} />
-                                <Route path={"/:id"} element={<ItemNews />} />
+                                <Route path={`${process.env.PUBLIC_URL}/:id`} element={<ItemNews />} />
                             </Route>
                         </Routes>
                     </BrowserRouter>
