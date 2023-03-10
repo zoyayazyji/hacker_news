@@ -3,21 +3,21 @@ import { AxiosError } from 'axios';
 import { getNewsList } from '../Actions/newsListAction';
 
 export interface INews {
-  by: string;
-  id: number;
-  kids: [];
-  score: number;
-  time: string | Date | any;
-  title: string;
-  type: string;
-  url: string;
-}
+    by: string;
+    id: number;
+    kids: [];
+    score: number;
+    time: string | Date | any;
+    title: string;
+    type: string;
+    url: string;
+};
 
 export interface INewsState {
     newsList: INews[] | any;
     loading: boolean;
     error: AxiosError | undefined;
-}
+};
 
 const initialState: INewsState = {
     newsList: [],
@@ -40,7 +40,6 @@ const categoryListSlice = createSlice({
             state.newsList = action.payload;
             state.loading = false;
         });
-        
     },
 });
 

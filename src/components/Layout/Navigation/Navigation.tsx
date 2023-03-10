@@ -7,7 +7,7 @@ export interface INavigation {
     to: string;
     end: boolean;
     children: ReactJSXElement;
-}
+};
 
 const Navigation: FC<INavigation> = ({ to, end, children }) => {
     return (

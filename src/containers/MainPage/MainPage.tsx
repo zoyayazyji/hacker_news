@@ -15,7 +15,6 @@ const MainPage = (): JSX.Element => {
     }, 60000)
   }, []);
 
-  console.log(newsList)
   return (<>
     <Loader loading={newsList?.length > 0 ? false : true} />
     <NewsCard

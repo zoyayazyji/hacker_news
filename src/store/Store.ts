@@ -8,7 +8,6 @@ export const store = configureStore({
         newsList: newsListReducer,
         oneNews: oneNewsReducer,
         coreComments: coreCommentsReducer
-       
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({

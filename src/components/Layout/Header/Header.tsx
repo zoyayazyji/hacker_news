@@ -5,10 +5,9 @@ import { Link } from "react-router-dom";
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
-const Header = (): JSX.Element  => { 
+const Header = (): JSX.Element => {
     return (
         <Grid style={{ backgroundColor: '#717487' }}>
-            {/* <Grid style={{ backgroundColor: '#3d3d3b' }}></Grid> */}
             <Toolbar
                 sx={{
                     justifyContent: 'space-between',
@@ -20,13 +19,13 @@ const Header = (): JSX.Element  => {
                     justifyContent={'center'}
                     alignItems={'center'}
                 >
-                    <Typography component={Link} to={`/`} style={{color: '#700d70', textDecoration: 'none', marginLeft: '15px'}}
+                    <Typography component={Link} to={`/`} style={{ color: '#700d70', textDecoration: 'none', marginLeft: '15px' }}
                     >
-                       Hacker News
+                        Hacker News Page
                     </Typography>
-                    <Typography style={{marginLeft: '1150px'}}>
-                        <Button style={{color: '#700d70'}} onClick={()=> window.location.reload()}>
-                        <AutorenewIcon/>
+                    <Typography style={{ marginLeft: '1050px' }}>
+                        <Button style={{ color: '#700d70' }} onClick={() => window.location.reload()}>
+                            <AutorenewIcon />
                         </Button>
                     </Typography>
                 </Grid>

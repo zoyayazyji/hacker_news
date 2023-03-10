@@ -3,14 +3,14 @@ import { AxiosError } from 'axios';
 import { getOneNews } from '../Actions/oneNewsActions';
 
 export interface INews {
-  by: string;
-  id: number;
-  kids: [];
-  score: number;
-  time: string | Date | any;
-  title: string;
-  type: string;
-  url: string;
+    by: string;
+    id: number;
+    kids: [];
+    score: number;
+    time: string | Date | any;
+    title: string;
+    type: string;
+    url: string;
 };
 
 export interface INewsState {
