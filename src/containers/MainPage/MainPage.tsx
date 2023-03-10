@@ -17,7 +17,7 @@ const MainPage = (): JSX.Element => {
 
   console.log(newsList)
   return (<>
-    <Loader loading={newsList.length > 0 ? false : true} />
+    <Loader loading={newsList?.length > 0 ? false : true} />
     <NewsCard
       newsList={newsList}
     />

@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { AxiosError } from 'axios';
-import { getCoreComments } from '../Actions/coreCommentsActions';
+import { getCoreComments, getComments } from '../Actions/coreCommentsActions';
 
 export interface IComment {
   by: string;
@@ -14,11 +14,13 @@ export interface IComment {
 
 export interface ICommentsState {
     coreComments: IComment[] | any;
+    comments: IComment[] | any;
     error: AxiosError | undefined;
 };
 
 const initialState: ICommentsState = {
   coreComments: [],
+  comments: [],
     error: undefined,
 };
 
@@ -30,6 +32,9 @@ const categoryListSlice = createSlice({
         builder.addCase(getCoreComments.fulfilled, (state, action) => {
             state.coreComments = action.payload;
         });
+        builder.addCase(getComments.fulfilled, (state, action) => {
+          state.comments = action.payload;
+      });
     },
 });
 

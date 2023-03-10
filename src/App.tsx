@@ -6,20 +6,40 @@ import {
 } from 'react-router-dom';
 import Container from '@mui/material/Container';
 import { CssBaseline } from '@mui/material';
+
 import Layout from './components/Layout/Layout';
 import MainPage from './containers/MainPage/MainPage';
 import ItemNews from './containers/ItemNews/ItemNews';
 import './App.css';
 
+// const theme = createMuiTheme({
+//     overrides: {
+//       MuiCssBaseline: {
+//         "@global": {
+//           "*, *::before, *::after": {
+//             boxSizing: "content-box",
+//           },
+  
+//           body: {
+//             backgroundColor: "#fff",
+//           },
+//         },
+//       },
+//     },
+//   });
+  
+
 function App(): JSX.Element {
+ 
     
     return (
         <>
-            <CssBaseline  />
-            <Container
+            <CssBaseline >
+            <Container 
                 maxWidth={false}
                 disableGutters
-                sx={{ margin: '0', padding: '0', backgroundColor: '#272725' }}
+                sx={{ margin: '0', padding: '0' }}
+                // sx={{ margin: '0', padding: '0', backgroundColor: '#272725' }}
             >
                 <BrowserRouter>
                     <Routes>
@@ -30,6 +50,7 @@ function App(): JSX.Element {
                     </Routes>
                 </BrowserRouter>
             </Container>
+            </CssBaseline>
         </>
     );
 }

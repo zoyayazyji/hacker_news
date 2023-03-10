@@ -7,7 +7,8 @@ import Typography from '@mui/material/Typography';
 
 const Header = (): JSX.Element  => { 
     return (
-        <Grid style={{ backgroundColor: '#3d3d3b' }}>
+        <Grid style={{ backgroundColor: '#717487' }}>
+            {/* <Grid style={{ backgroundColor: '#3d3d3b' }}></Grid> */}
             <Toolbar
                 sx={{
                     justifyContent: 'space-between',
@@ -19,12 +20,12 @@ const Header = (): JSX.Element  => {
                     justifyContent={'center'}
                     alignItems={'center'}
                 >
-                    <Typography component={Link} to={`/`} style={{color: '#be7d6a', textDecoration: 'none', marginLeft: '15px'}}
+                    <Typography component={Link} to={`/`} style={{color: '#700d70', textDecoration: 'none', marginLeft: '15px'}}
                     >
                        Hacker News
                     </Typography>
                     <Typography style={{marginLeft: '1150px'}}>
-                        <Button style={{color: '#be7d6a'}} onClick={()=> window.location.reload()}>
+                        <Button style={{color: '#700d70'}} onClick={()=> window.location.reload()}>
                         <AutorenewIcon/>
                         </Button>
                     </Typography>

@@ -17,7 +17,7 @@ const NewsCard = ({newsList}: {newsList: INews[]}): JSX.Element => {
  return ( <>
  {newsList?.map((item: INews) => (
  <Grid style={{marginLeft: '270px'}} key={item.id} >
-  <Card variant="outlined" sx={{ maxWidth: 875, margin: '10px', backgroundColor: '#be7d6a'}}>
+  <Card variant="outlined" sx={{ maxWidth: 875, margin: '10px', backgroundColor: '#e5dfe5'}}>
    <CardContent>
      <Typography component='div' sx={{ fontSize: 14 }} color="text.secondary">
       Published by : <strong>{item.by}</strong> , at  {item.time}
@@ -35,7 +35,7 @@ const NewsCard = ({newsList}: {newsList: INews[]}): JSX.Element => {
      </Typography>
    </CardContent>
    <CardActions>
-     <Button component={Link} to={`/${item.id}`} size="small" style={{ textDecoration: 'none', color: '#fdd3cf'}}>{'Learn More >>>'}</Button>
+     <Button component={Link} to={`/${item.id}`} size="small" style={{ textDecoration: 'none', color: '#1b324e'}}>{'Learn More >>>'}</Button>
    </CardActions>
    </Card>
    </Grid>

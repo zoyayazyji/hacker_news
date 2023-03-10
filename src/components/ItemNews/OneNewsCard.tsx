@@ -11,13 +11,15 @@ import {
 import { INews } from './../../store/Services/Slices/newsListSlice';
 import { IComment } from './../../store/Services/Slices/coreCommentsSlice';
 import CommentsCard from './CommentsCard';
+import Loader from '../Loader/Loader';
 
 
 const OneNewsCard = ({ oneNews, coreComments }: {oneNews: INews, coreComments: IComment[]}): JSX.Element => {
-
+  
  return ( <>
- <Grid style={{marginLeft: '270px', paddingBottom: '20px'}} key={oneNews.id} >
-  <Card variant="outlined" sx={{ maxWidth: 875, margin: '10px', backgroundColor: '#be7d6a'}}>
+ {/* <Loader loading={oneNews?.kids?.length !== undefined ? true : false} /> */}
+<Grid style={oneNews?.kids?.length === undefined ?{marginLeft: '270px', paddingBottom: '420px'} : {marginLeft: '270px', paddingBottom: '20px'}} key={oneNews.id} >
+  <Card variant="outlined" sx={{ maxWidth: 875, margin: '10px', backgroundColor: '#e5dfe5'}}>
    <CardContent>
      <Typography component='div' sx={{ fontSize: 14 }} color="text.secondary">
       Published by : <strong>{oneNews.by}</strong> , at  {oneNews.time}
@@ -42,9 +44,6 @@ const OneNewsCard = ({ oneNews, coreComments }: {oneNews: INews, coreComments: I
       </Typography>
           </Typography>
    </CardContent>
-   <CardActions>
-     {/* <Button component={Link} to={`/${item.id}`} size="small" style={{ textDecoration: 'none', color: '#fdd3cf'}}>{'Learn More >>>'}</Button> */}
-   </CardActions>
    </Card>
    </Grid> 
    <CommentsCard
