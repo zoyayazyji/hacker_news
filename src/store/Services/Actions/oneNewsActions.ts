@@ -1,13 +1,10 @@
 import axios from '../../../instance';
-import axiosA from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { INews } from '../Slices/newsListSlice';
 
 export const getOneNews = createAsyncThunk("get/oneNews", async (id: number | any) => {
   try {
-    setInterval(async() => {
-    const response = await axiosA.get('https://hacker-news.firebaseio.com/v0/newstories.json?print=pretty');
-    }, 0);
+    const response = await axios.get('/newstories.json?print=pretty');
     const itemNews = await axios.get(`/item/${id}.json?print=pretty`);
     const oneNews: INews = {
       by: itemNews?.data?.by,
