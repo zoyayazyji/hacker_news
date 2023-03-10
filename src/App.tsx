@@ -1,6 +1,7 @@
 import React from 'react';
 import {
     BrowserRouter,
+    HashRouter,
     Routes,
     Route,
 } from 'react-router-dom';
@@ -19,14 +20,14 @@ function App(): JSX.Element {
                     disableGutters
                     sx={{ margin: '0', padding: '0' }}
                 >
-                    <BrowserRouter>
+                    <HashRouter>
                         <Routes>
                             <Route path='/' element={<Layout />}>
                                 <Route path='/' element={<MainPage />} />
                                 <Route path={"/:id"} element={<ItemNews />} />
                             </Route>
                         </Routes>
-                    </BrowserRouter>
+                    </HashRouter>
                 </Container>
             </CssBaseline>
         </>
