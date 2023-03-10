@@ -7,6 +7,8 @@ export const getCoreComments = createAsyncThunk("get/coreComments", async (id: n
     let itemComments: IComment[] = [];
     const comments = await axios.get(`/item/${id}.json?print=pretty`);
     const comment = comments.data;
+    console.log(comments.data)
+    console.log(comment?.kids)
     if (comment?.kids !== undefined) {
       for (let i = 0; i < comment?.kids.length; i++) {
         const response = await axios.get(`/item/${comment.kids[i]}.json?print=pretty`);
