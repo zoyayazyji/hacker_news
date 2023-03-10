@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-    BrowserRouter,
     HashRouter,
     Routes,
     Route,

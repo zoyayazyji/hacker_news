@@ -2,7 +2,7 @@
   "name": "hacker_news",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://zoyayazyji.github.io/hacker_news",
+  "homepage": "https://zoyayazyji.github.io/newstories",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
