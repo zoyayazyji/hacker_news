@@ -24,11 +24,11 @@ const CommentsCard = ({ coreComments }: { coreComments: IComment[] }): JSX.Eleme
   };
 
   return (<>
-    <Grid style={{ marginLeft: '170px', paddingBottom: '10px' }}>
+    <Grid style={{ marginLeft: '70px', paddingBottom: '10px', backgroundColor: '#fbeafb', borderRadius: 40, borderTopLeftRadius: 0, marginTop: '-25px', padding: '30px'}}>
       {coreComments?.map((item) => (
         <Grid>
           {item?.kids !== undefined ? (<>
-            <Card variant="outlined" sx={{ maxWidth: 1075, margin: '10px', backgroundColor: '#adabb8' }}>
+            <Card variant="outlined" sx={{ maxWidth: 1075, margin: '10px', backgroundColor: '#ffffff', boxShadow: '1px 1px 12px 2px rgba(34, 60, 80, 0.2)' }}>
               <CardContent>
                 <Typography component='div' sx={{ fontSize: 14 }} color="text.secondary">
                   Published by : <strong>{item?.by}</strong> , at  {item?.time}
@@ -45,8 +45,8 @@ const CommentsCard = ({ coreComments }: { coreComments: IComment[] }): JSX.Eleme
             {item?.id === comments[0]?.parent ? (
               <Grid>
                 {comments?.map((comment: IComment) => (
-                  <Grid sx={{ maxWidth: 875, marginTop: '-60px', marginBottom: '70px', marginLeft: '170px', backgroundColor: '#e5dfe5' }}>
-                    <Card variant="outlined" sx={{ backgroundColor: '#f7eaf7' }}>
+                  <Grid sx={{ maxWidth: 875, marginTop: '-60px', marginBottom: '70px', marginLeft: '170px'}}>
+                    <Card variant="outlined" sx={{ backgroundColor: '#fbc8fb', boxShadow: '2px 0px 17px 1px rgba(34, 60, 80, 0.6)' }}>
                       <CardContent>
                         <Typography component='div' sx={{ fontSize: 14 }} color="text.secondary">
                           Published by : <strong>{comment?.by}</strong> , at  {comment?.time}
@@ -63,7 +63,7 @@ const CommentsCard = ({ coreComments }: { coreComments: IComment[] }): JSX.Eleme
           </>
           ) : (
             <Grid style={{ paddingBottom: '10px' }} key={item?.id}>
-              <Card variant="outlined" sx={{ maxWidth: 1075, margin: '10px', backgroundColor: '#adabb8' }}>
+              <Card variant="outlined" sx={{ maxWidth: 1075, margin: '10px', backgroundColor: '#ffffff' }}>
                 <CardContent>
                   <Typography component='div' sx={{ fontSize: 14 }} color="text.secondary">
                     Published by : <strong>{item?.by}</strong> , at  {item?.time}
