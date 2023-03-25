@@ -7,28 +7,34 @@ import Typography from '@mui/material/Typography';
 
 const Header = (): JSX.Element => {
     return (
-        <Grid style={{ backgroundColor: '#717487' }}>
+        <Grid sx={{ 
+            backgroundColor: '#fefefe', 
+            boxShadow: '0px 5px 5px -5px rgba(34, 60, 80, 0.6)',
+            position: 'fixed',
+            zIndex: 3,
+            left: 0,
+            top: 0,
+            width: '100%',
+           
+            }}
+            >
             <Toolbar
                 sx={{
+                    dispay: 'flex',
+                    flexDirection: 'row',
                     justifyContent: 'space-between',
                     paddingRight: '0',
                 }}
             >
-                <Grid
-                    display={'flex'}
-                    justifyContent={'center'}
-                    alignItems={'center'}
-                >
-                    <Typography component={Link} to={`/`} style={{ color: '#700d70', textDecoration: 'none', marginLeft: '15px' }}
+                    <Typography component={Link} to={`/hacker_news`} style={{ color: '#da3ada', textDecoration: 'none' }}
                     >
-                        Hacker News Page
+                     💜 News Catalog 💜
                     </Typography>
-                    <Typography style={{ marginLeft: '900px' }}>
-                        <Button style={{ color: '#700d70' }} onClick={() => window.location.reload()}>
+                    <Typography >
+                        <Button style={{ color: '#da3ada' }} onClick={() => window.location.reload()}>
                             <AutorenewIcon />
                         </Button>
                     </Typography>
-                </Grid>
             </Toolbar>
         </Grid>
     );
