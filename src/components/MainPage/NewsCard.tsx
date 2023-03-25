@@ -6,23 +6,26 @@ import {
   CardContent,
   Button,
   Typography,
-  Grid
+  Grid,
+  Box
 } from '@mui/material';
 import StarsIcon from '@mui/icons-material/Stars';
 import { INews } from './../../store/Services/Slices/newsListSlice';
 
 const NewsCard = ({ newsList }: { newsList: INews[] }): JSX.Element => {
   return (<>
+  <Grid sx={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row', marginLeft: '120px', marginTop: '75px'}}>
     {newsList?.map((item: INews) => (
-      <Grid style={{ marginLeft: '270px' }} key={item.id} >
-        <Card variant="outlined" sx={{ maxWidth: 875, margin: '10px', backgroundColor: '#e5dfe5' }}>
+      <Box sx={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'column'}} key={item.id} >
+        <Card variant="outlined" sx={{ width: '300px', height: 375, marginTop: '20px', marginLeft: '20px', marginRight: '20px', marginBottom: '20px', boxShadow: '1px 1px 12px 2px rgba(34, 60, 80, 0.2)', backgroundColor: '#ffffff', ":hover": {height: 405, weight: 405, marginTop: '5px', marginBottom: '5px'}}}>
           <CardContent>
             <Typography component='div' sx={{ fontSize: 14 }} color="text.secondary">
               Published by : <strong>{item.by}</strong> , at  {item.time}
             </Typography>
-            <Typography component='div' variant="body2" sx={{ fontSize: 18, fontWeight: 'bold', paddingTop: '50px' }}>
+            <Typography component='div' variant="body2" sx={{ fontSize: 18, fontWeight: 'bold', paddingTop: '50px', height: '200px' }}>
               {item.title}
             </Typography>
+            <hr style={{backgroundColor: '#da3ada', height: '2px'}}/>
             <Typography component='div' variant="body2" sx={{ display: 'flex', paddingTop: '10px' }}>
               <Typography >
                 <StarsIcon />
@@ -33,11 +36,12 @@ const NewsCard = ({ newsList }: { newsList: INews[] }): JSX.Element => {
             </Typography>
           </CardContent>
           <CardActions>
-            <Button component={Link} to={`/${item.id}`} size="small" style={{ textDecoration: 'none', color: '#1b324e' }}>{'Learn More >>>'}</Button>
+            <Button component={Link} to={`/${item.id}`} size="small" sx={{ textDecoration: 'none', color: '#da3ada', ':hover': {color: '#c31cf6'} }}>{'Learn More >>>'}</Button>
           </CardActions>
         </Card>
-      </Grid>
+      </Box>
     ))}
+    </Grid>
   </>
   );
 };
