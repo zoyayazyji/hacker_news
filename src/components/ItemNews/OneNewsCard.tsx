@@ -14,8 +14,8 @@ import CommentsCard from './CommentsCard';
 const OneNewsCard = ({ oneNews, coreComments }: { oneNews: INews, coreComments: IComment[] }): JSX.Element => {
 
   return (<>
-    <Grid style={oneNews?.kids?.length === undefined ? { marginLeft: '270px', paddingBottom: '420px' } : { marginLeft: '270px', paddingBottom: '20px' }} key={oneNews.id} >
-      <Card variant="outlined" sx={{ maxWidth: 875, margin: '10px', backgroundColor: '#e5dfe5' }}>
+    <Grid style={oneNews?.kids?.length === undefined ? { marginLeft: '20px', paddingBottom: '0' } : { marginLeft: '20px', paddingBottom: '0' }} key={oneNews.id} >
+      <Card variant="outlined" sx={{ width: '95%', marginTop: '90px', backgroundColor: '#ffffff', boxShadow: '1px 1px 12px 2px rgba(34, 60, 80, 0.2)' }}>
         <CardContent>
           <Typography component='div' sx={{ fontSize: 14 }} color="text.secondary">
             Published by : <strong>{oneNews.by}</strong> , at  {oneNews.time}
