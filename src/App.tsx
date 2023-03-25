@@ -19,7 +19,7 @@ function App(): JSX.Element {
                     disableGutters
                     sx={{ margin: '0', padding: '0' }}
                 >
-                    <BrowserRouter>
+                    <BrowserRouter basename={process.env.PUBLIC_URL}>
                         <Routes>
                             <Route path='/' element={<Layout />}>
                                 <Route path='/' element={<MainPage />} />
